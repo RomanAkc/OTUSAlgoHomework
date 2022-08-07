@@ -1,0 +1,8 @@
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\bin\Debug\HarryPotterSquare.exe.config
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\bin\Debug\HarryPotterSquare.exe
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\bin\Debug\HarryPotterSquare.pdb
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\obj\Debug\HarryPotterSquare.csproj.AssemblyReference.cache
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\obj\Debug\HarryPotterSquare.csproj.SuggestedBindingRedirects.cache
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\obj\Debug\HarryPotterSquare.csproj.CoreCompileInputs.cache
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\obj\Debug\HarryPotterSquare.exe
+D:\Programming\OTUS\AlgoHomework\01\HarryPotterSquare\obj\Debug\HarryPotterSquare.pdb
