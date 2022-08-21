@@ -4,9 +4,12 @@ import java.util.Date;
 
 public class Program {
     public static void main(String[] args) {
+        IArray arrayListWrapper = new ArrayListWrapper();
+        testAddIndex0Array(arrayListWrapper, 10000000);
+
         //testAdd();
 
-        testAddIndex0Array();
+        //testAddIndex0Array();
         //IArray singleArray = new SingleArray();
         //IArray vectorArray = new VectorArray();
         //IArray factorArray = new FactorArray();
