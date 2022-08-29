@@ -17,7 +17,7 @@ public class PrimeEnumeration {
         if(N % 2 == 0)
             return  false;
 
-        for(long j = 2; j < N; ++j) {
+        for(long j = 3; j < N; j += 2) {
             if(N % j == 0)
                 return false;
         }

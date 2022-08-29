@@ -8,8 +8,13 @@ public class IterateFib {
         if(N == 1)
             return 1;
 
+        //N-2 -е число Фибоначчи
         long FN_2 = 0;
+
+        //N-1 -е число Фибоначчи
         long FN_1 = 1;
+
+        //N -е число Фибоначчи
         long FN = 0;
 
         for(int i = 2; i <= N; ++i) {
