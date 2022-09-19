@@ -31,7 +31,7 @@ public class SimpleBST {
             if(x == value)
                 return this;
 
-            //value is less than value in node
+            //value is less than value in node, search in left tree
             if(x < value) {
                 if(left == null)
                     return null;
@@ -39,7 +39,7 @@ public class SimpleBST {
                 return left.search(x);
             }
 
-            //value is greater than value in node
+            //value is greater than value in node, search in right tree
             if(right == null)
                 return null;
 
@@ -47,7 +47,7 @@ public class SimpleBST {
         }
 
         public void remove() {
-            //1. Removable node has no children -> remove node
+            //1. Removable node has no children -> remove node (nullify parent left or right)
             if(left == null && right == null) {
                 if(value > parent.value)
                     parent.right = null;
@@ -118,6 +118,7 @@ public class SimpleBST {
     }
 
     public boolean search(int x) {
+        //empty tree
         if(node == null)
             return false;
 
@@ -125,6 +126,7 @@ public class SimpleBST {
     }
 
     public void remove(int x) {
+        //empty tree
         if(node == null)
             return;
 

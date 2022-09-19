@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SimpleBSTTest {
     private SimpleBST createTree() {
-        //                      20
+        //                     20
         //        15                        25
         //   5          18            23          35
         //3    12    17    19      22    24    34    36
@@ -33,7 +33,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void check_value_is_in_tree() {
+    void check_values_which_is_in_tree() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -56,7 +56,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void check_value_is_not_in_tree() {
+    void check_values_which_are_not_in_tree() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -67,7 +67,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_not_exists() {
+    void remove_value_which_is_not_exists_in_tree() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -91,7 +91,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_without_children_from_top() {
+    void remove_value_without_children_from_top_of_tree() {
         //Arrange
         SimpleBST tree = new SimpleBST();
         tree.insert(25);
@@ -104,7 +104,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_without_children() {
+    void remove_values_without_children() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -192,7 +192,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_with_one_child_from_top_father_right_son() {
+    void remove_value_with_one_child_from_top_of_tree_father_right_son() {
         //Arrange
         SimpleBST tree = new SimpleBST();
         tree.insert(25);
@@ -210,7 +210,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_with_one_child_from_top_father_left_son() {
+    void remove_value_with_one_child_from_top_of_tree_father_left_son() {
         //Arrange
         SimpleBST tree = new SimpleBST();
         tree.insert(25);
@@ -227,8 +227,10 @@ class SimpleBSTTest {
         assertTrue(tree.search(15));
     }
 
+
+    //////
     @Test
-    void remove_value_with_two_children_max_right_without_child() {
+    void remove_value_with_two_children_min_right_without_child() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -240,7 +242,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_with_two_children_min_right_with_child() {
+    void remove_value_with_two_children_min_right_with_one_child() {
         //Arrange
         SimpleBST tree = createTree();
         tree.remove(25);
@@ -253,7 +255,7 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_with_two_children_from_top_min_right_with_child() {
+    void remove_value_with_two_children_from_top_of_tree_min_right_without_child() {
         //Arrange
         SimpleBST tree = createTree();
 
@@ -265,40 +267,119 @@ class SimpleBSTTest {
     }
 
     @Test
-    void remove_value_with_two_children_max_left_with_child() {
+    void remove_value_with_two_children_from_top_of_tree_min_right_with_child() {
         //Arrange
         SimpleBST tree = createTree();
-        tree.remove(25);
-        tree.remove(23);
-        tree.remove(35);
-        tree.remove(22);
-        tree.remove(24);
-        tree.remove(34);
-        tree.remove(36);
+        tree.remove(20);
 
         //Act
-        tree.remove(15);
+        tree.remove(22);
 
         //Assert
-        assertFalse(tree.search(15));
+        assertFalse(tree.search(22));
     }
 
     @Test
-    void remove_value_with_two_children_from_top_max_left_with_child() {
+    void remove_all_added_value_with_added_order() {
         //Arrange
         SimpleBST tree = createTree();
-        tree.remove(25);
-        tree.remove(23);
-        tree.remove(35);
-        tree.remove(22);
-        tree.remove(24);
-        tree.remove(34);
-        tree.remove(36);
 
-        //Act
+        //Act/assert
         tree.remove(20);
+        assertFalse(tree.search(20));
 
-        //Assert
+        tree.remove(15);
+        assertFalse(tree.search(15));
+
+        tree.remove(25);
+        assertFalse(tree.search(25));
+
+        tree.remove(5);
+        assertFalse(tree.search(5));
+
+        tree.remove(18);
+        assertFalse(tree.search(18));
+
+        tree.remove(23);
+        assertFalse(tree.search(23));
+
+        tree.remove(35);
+        assertFalse(tree.search(35));
+
+        tree.remove(3);
+        assertFalse(tree.search(3));
+
+        tree.remove(12);
+        assertFalse(tree.search(12));
+
+        tree.remove(17);
+        assertFalse(tree.search(17));
+
+        tree.remove(19);
+        assertFalse(tree.search(19));
+
+        tree.remove(22);
+        assertFalse(tree.search(22));
+
+        tree.remove(24);
+        assertFalse(tree.search(24));
+
+        tree.remove(34);
+        assertFalse(tree.search(34));
+
+        tree.remove(36);
+        assertFalse(tree.search(36));
+    }
+
+    @Test
+    void remove_all_added_value_with_reverse_order() {
+        //Arrange
+        SimpleBST tree = createTree();
+
+        //Act/assert
+        tree.remove(36);
+        assertFalse(tree.search(36));
+
+        tree.remove(34);
+        assertFalse(tree.search(34));
+
+        tree.remove(24);
+        assertFalse(tree.search(24));
+
+        tree.remove(22);
+        assertFalse(tree.search(22));
+
+        tree.remove(19);
+        assertFalse(tree.search(19));
+
+        tree.remove(17);
+        assertFalse(tree.search(17));
+
+        tree.remove(12);
+        assertFalse(tree.search(12));
+
+        tree.remove(3);
+        assertFalse(tree.search(3));
+
+        tree.remove(35);
+        assertFalse(tree.search(35));
+
+        tree.remove(23);
+        assertFalse(tree.search(23));
+
+        tree.remove(18);
+        assertFalse(tree.search(18));
+
+        tree.remove(5);
+        assertFalse(tree.search(5));
+
+        tree.remove(25);
+        assertFalse(tree.search(25));
+
+        tree.remove(15);
+        assertFalse(tree.search(15));
+
+        tree.remove(20);
         assertFalse(tree.search(20));
     }
 }
