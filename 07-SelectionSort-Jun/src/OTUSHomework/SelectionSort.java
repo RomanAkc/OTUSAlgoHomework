@@ -10,22 +10,20 @@ public class SelectionSort {
     void sort() {
         int N = A.length;
 
-        for(int i = 1; i < N; ++i) {
-            for(int j = i - 1; j >= 0 && A[j] > A[j + 1]; j--)
-                swap(j, j + 1);
+        int max = findMax(N);
+        for(int i = N - 1; i > 0; --i) {
+            swap(max, i);
+            max = findMax(i);
         }
     }
 
-    void sort_optimize() {
-        int N = A.length;
-
-        int j;
-        for(int i = 1; i < N; ++i) {
-            int K = A[i];
-            for(j = i - 1; j >= 0 && A[j] > A[j + 1]; j--)
-                swap(j, j + 1);
-            A[j + 1] = K;
+    int findMax(int N) {
+        int max = 0;
+        for(int i = 1; i < N; i++) {
+            if(A[i] > A[max])
+                max = i;
         }
+        return max;
     }
 
     void swap(int L, int R) {
